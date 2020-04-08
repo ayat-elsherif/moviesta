@@ -1,0 +1,17 @@
+<div class="container-fluid px-5  mainSection">
+    <div class="row">
+        <h2 class="col-md-4 col-lg-2"> All Favorite Movies <br>all times</h2>
+        <div class="col-lg-2 col-md-4" *ngFor='let movie of movies' >
+            <div class="singleItem col-sm-12">
+                <img class='img-fluid' src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' />
+            <h5>
+                {{movie.name? movie.name:movie.title}}
+            </h5>
+            
+            <span>popularity: {{movie.popularity}}</span>
+            <div class="item-label">{{movie.vote_average}}</div>
+           
+            </div>
+        </div>
+    </div>
+</div>
