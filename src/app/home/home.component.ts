@@ -7,12 +7,22 @@ import{MovieService} from '../movie.service';
 })
 export class HomeComponent implements OnInit {
   trends=[];
-
+  pNumbers:number[]=[];
   constructor(public _MovieService:MovieService) {
-    _MovieService.getallTrending().subscribe((data)=>{
+    for(let i=1;i<=10;i++){
+          this.pNumbers.push(i);
+    }
+    _MovieService.getallTrending(1).subscribe((data)=>{
+      
         this.trends=data.results;
        // console.log(this.movies);
     });
+   }
+   changePage(x:number){
+    this._MovieService.getallTrending(x).subscribe((data)=>{ 
+      this.trends=data.results;
+     // console.log(this.movies);
+  });
    }
 
   ngOnInit() {

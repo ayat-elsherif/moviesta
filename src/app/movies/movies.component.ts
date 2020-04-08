@@ -7,10 +7,19 @@ import {MovieService} from '../movie.service';
 })
 export class MoviesComponent implements OnInit {
 movies=[];
+pNumbers=[];
   constructor(public _MovieService:MovieService) { 
-
-    _MovieService.getallMovies().subscribe((data)=>{
+    for(let i=1;i<=10;i++){
+        this.pNumbers.push(i);
+    }
+    _MovieService.getallMovies(1).subscribe((data)=>{
       //console.log(data.results);
+      this.movies=data.results;
+    });
+  }
+
+  changePage(x){
+    this._MovieService.getallMovies(x).subscribe((data)=>{
       this.movies=data.results;
     });
   }
