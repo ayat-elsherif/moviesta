@@ -6,6 +6,7 @@
                 <img class='img-fluid' src='https://image.tmdb.org/t/p/w500/{{series.poster_path}}' />
             <h5>
                 {{series.name? series.name:series.title}}
+                <small> {{series.original_name==series.name?'':series.original_name}}</small>
             </h5>
             <span>popularity: {{series.popularity}}</span>
             <div class="item-label">{{series.vote_average}}</div>

@@ -8,12 +8,11 @@
                     {{movie.name? movie.name:movie.title}}
                 </h5>
                 <span>popularity: {{movie.popularity}}</span>
-                <h6>{{movie.release_date}}</h6>
                 <div class="item-label">{{movie.vote_average}}</div>
             </div>
         </a>
     </div>
-    <div class="d-flex">
+    <div class="d-flex justify-content-center">
         <a class='px-4' *ngFor='let bNumber of pNumbers' (click)='changePage(bNumber)'>{{bNumber}}</a>
     </div>
 </div>
