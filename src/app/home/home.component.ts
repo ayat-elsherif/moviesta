@@ -9,21 +9,25 @@ export class HomeComponent implements OnInit {
   trends=[];
   pNumber=1;
   pNumbers:number[]=[];
+  hiddenImg:String="";
+  
   constructor(public _MovieService:MovieService) {
     for(let i=1;i<=10;i++){
           this.pNumbers.push(i);
     }
-    _MovieService.getallTrending(this.pNumber).subscribe((data)=>{
+    this._MovieService.getallTrending(this.pNumber).subscribe((data)=>{
       
-        this.trends=data.results;
-       // console.log(this.movies);
-    });
+      this.trends=data.results;
+    console.log(this.trends);
+  });
    }
+  
+
    changePage(x){
      this.pNumber=x;
     this._MovieService.getallTrending(this.pNumber).subscribe((data)=>{ 
       this.trends=data.results;
-     // console.log(this.movies);
+    
   });
    }
 
@@ -40,6 +44,7 @@ export class HomeComponent implements OnInit {
    this.changePage(this.pNumber - 1);
   }
 }
+
   ngOnInit() {
   }
 

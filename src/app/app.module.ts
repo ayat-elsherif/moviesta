@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MoviesComponent } from './movies/movies.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { SeriesComponent } from './series/series.component';
+import { ReviewsModule } from './reviews/reviews.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { SeriesComponent } from './series/series.component';
     MoviesComponent,
     NotfoundComponent,
     SeriesComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

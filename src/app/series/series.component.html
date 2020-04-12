@@ -1,9 +1,16 @@
-<div class="container-fluid px-5 mainSection">
+<div class="container-fluid mainSection">
     <div class="row">
-        <h2 class="col-md-4 col-lg-2"> All Favorite Series <br>all times</h2>
-        <div class="col-lg-2 col-md-4" *ngFor='let series of series' >
-            <div class="singleItem col-sm-12">
-                <img class='img-fluid' src='https://image.tmdb.org/t/p/w500/{{series.poster_path}}' />
+        <div class="col-md-4 col-lg-4 mt-5">
+            <h2> All Favorite Series <br>all times</h2>
+        <p>anything goes here anything goes hereanything goes here anything goes here here 
+            anything goes here anything goes here here anything goes here</p>
+        </div>
+        <div class="col-lg-2 col-md-4" *ngFor='let series of series'>
+            <div class="singleItem col-sm-12" >
+                <img class='img-fluid' *ngIf='series.poster_path; else defaultImg' 
+                src='https://image.tmdb.org/t/p/w500/{{series.poster_path}}' />
+                
+                <ng-template #defaultImg ><img class="img-fluid" src='../../assets/movie-night-poster.jpg'/></ng-template>
             <h5>
                 {{series.name? series.name:series.title}}
                 <small> {{series.original_name==series.name?'':series.original_name}}</small>

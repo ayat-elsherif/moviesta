@@ -11,6 +11,7 @@ series=[];
   constructor(public _MovieService:MovieService) { 
     _MovieService.getAllSeries().subscribe((data)=>{
       this.series=data.results;
+      console.log(this.series);
     });
   }
 
