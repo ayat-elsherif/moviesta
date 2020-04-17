@@ -7,6 +7,7 @@ import{MovieService} from '../movie.service';
 })
 export class HomeComponent implements OnInit {
   trends=[]; 
+  term='';
   y='';
   pNumber=1;
   pNumbers:number[]=[];
