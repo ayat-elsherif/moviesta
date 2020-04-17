@@ -1,11 +1,11 @@
 <div class="container-fluid  mainSection">
     <div class="row">
-        <div class="col-md-4 col-lg-4 mt-5">
+        <div class="col-md-4 col-lg-4 mt-5 mainTitle">
             <h2> All Favorite Movies <br>all times</h2>
         <p>anything goes here anything goes hereanything goes here anything goes here here 
             anything goes here anything goes here here anything goes here</p>
         </div>
-        <a class="col-lg-2 col-md-4" *ngFor='let movie of movies'  hyperLink='movie-page' >
+        <a class="col-lg-2 col-md-4" *ngFor='let movie of movies'  [routerLink]='["/view","movie",movie.id]' >
             <div class="singleItem col-sm-12">
                 <img class='img-fluid' 
                 src='https://image.tmdb.org/t/p/w500/{{movie.poster_path? movie.poster_path:movie.backdrop_path}}' />

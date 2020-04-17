@@ -3,15 +3,18 @@
 .mainSection{
     margin:4rem auto 1rem;
     padding:0 10rem;
-    h2{
-        border-top: 1px solid #777;
-        padding-top: 1rem;
 
-    }
-    p{
-        border-bottom: 1px solid #777;
-        padding-bottom: 1rem;
-
+    .mainTitle{
+        h2{
+            border-top: 1px solid #777;
+            padding-top: 1rem;
+    
+        }
+        p{
+            border-bottom: 1px solid #777;
+            padding-bottom: 1rem;
+    
+        }
     }
     .singleItem{
         margin-bottom:1.5rem;

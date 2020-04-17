@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { SeriesComponent } from './series/series.component';
-import { SendmessageComponent } from './reviews/sendmessage/sendmessage.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 
 const routes: Routes = [
@@ -12,7 +12,10 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'movies',component:MoviesComponent},
   {path:'series',component:SeriesComponent},
-  {path:'**',component:NotfoundComponent},
+  {path:'view/:media_type/:id',component:MovieDetailsComponent},
+  {path:'view/movie/:id',component:MovieDetailsComponent},
+  {path:'view/series/:id',component:MovieDetailsComponent},
+  {path:'**',component:NotfoundComponent}
 ];
 
 @NgModule({
@@ -20,3 +23,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

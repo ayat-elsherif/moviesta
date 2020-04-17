@@ -1,23 +1,23 @@
 <div class="container-fluid mainSection">
     <div class="row">
-        <div class="col-md-4 col-lg-4 mt-5">
+        <div class="col-md-4 col-lg-4 mt-5 mainTitle">
             <h2> All Favorite Series <br>all times</h2>
         <p>anything goes here anything goes hereanything goes here anything goes here here 
             anything goes here anything goes here here anything goes here</p>
         </div>
-        <div class="col-lg-2 col-md-4" *ngFor='let series of series'>
+        <a [routerLink]="['/view','tv',series.id]" class="col-lg-2 col-md-4" *ngFor='let series of series'>   
             <div class="singleItem col-sm-12" >
                 <img class='img-fluid' *ngIf='series.poster_path; else defaultImg' 
                 src='https://image.tmdb.org/t/p/w500/{{series.poster_path}}' />
                 
-                <ng-template #defaultImg ><img class="img-fluid" src='../../assets/movie-night-poster.jpg'/></ng-template>
-            <h5>
-                {{series.name? series.name:series.title}}
-                <small> {{series.original_name==series.name?'':series.original_name}}</small>
-            </h5>
-            <span>popularity: {{series.popularity}}</span>
-            <div class="item-label">{{series.vote_average}}</div>
-            </div>
-        </div>
+                <ng-template #defaultImg ><img class="img-fluid" src='assets/movie-night-poster.jpg'/></ng-template>
+                <h5>
+                    {{series.name? series.name:series.title}}
+                    <small> {{series.original_name==series.name?'':series.original_name}}</small>
+                </h5>
+                <span>popularity: {{series.popularity}}</span>
+                <div class="item-label">{{series.vote_average}}</div>
+            </div> 
+        </a>
     </div>
 </div>

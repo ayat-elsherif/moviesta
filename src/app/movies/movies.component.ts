@@ -15,6 +15,7 @@ pNumbers=[];
     _MovieService.getallMovies(1).subscribe((data)=>{
       //console.log(data.results);
       this.movies=data.results;
+      console.log(this.movies);
     });
   }
 
