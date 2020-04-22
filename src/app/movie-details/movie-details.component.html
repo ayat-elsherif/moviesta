@@ -1,16 +1,75 @@
-<div *ngFor='let movie of movie'>
+<div>
     
     <div class="container-fluid p-5">
         <div class="row">
             <div class="col-md-3">
                 <div class="container-fluid">
                     <img class="img-fluid" src='https://image.tmdb.org/t/p/w500/{{ movie.poster_path}}' />
-                    <span>{{movie.title?movie.title:movie.name}}</span>
+                  <!--<h4 class="text-center mt-1">{{movie.title?movie.title:movie.name}}</h4>-->  
                 </div>
             </div>
 
 
-            <div class="col-md-9"></div>
+            <div class="col-md-9">
+                    <div class="col-sm-12 bg-white table-responsive">
+                       <table class="table">
+                            <tr>
+                                <th width='30%'>Name</th>
+                                <td>{{movie.title?movie.title:movie.name}} 
+                                    <small>{{movie.original_name==movie.name?"":"  " + movie.original_name}}</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th width='30%'>Release Date</th>
+                                <td>{{movie.first_air_date?movie.first_air_date:movie.release_date}}</td>
+                            </tr>
+                            <tr>
+                                <th width='30%'>Genre</th>
+                                <td><span *ngFor="let genre of movie.genres">{{genre.name}}, </span></td>
+                            </tr>
+                            <tr>
+                                <th width='30%'>Vote</th>
+                                <td>{{movie.vote_average}}</td>
+                            </tr>
+                            <tr>
+                                <th width='30%'>Popularity</th>
+                                <td>{{movie.popularity}}</td>
+                            </tr>
+                            <tr>
+                                <th width='30%'>Production compaines</th>
+                                <td><span *ngFor='let pro of movie.production_companies'>
+                                    {{pro.name}},
+                                </span></td>
+                            </tr>
+                            <tr *ngIf='movie.tagline'>
+                                <th width="30%">Tagline</th>
+                                <td>{{movie.tagline}}</td>
+                            </tr>
+                            <tr *ngIf='movie.spoken_languages;else seriesLang'>
+                                <th width='30%'>Languages</th>
+                                <td><span *ngFor="let lang of movie.spoken_languages">
+                                    {{lang.iso_639_1}}</span></td>
+                            </tr>
+                            <ng-template #seriesLang>
+                                <tr>
+                                    <th width='30%'>Languages</th>
+                                    <td><span *ngFor="let lang of movie.languages;let x of index">
+                                        {{lang}}</span></td>
+                                </tr>
+                            </ng-template>
+                       </table>
+                    </div>
+                    <div class="col-sm-12 bg-white mt-3">
+                        <table class="table">
+                            <tr>
+                                <th width='30%'>Overview</th>
+                                <td>{{movie.overview}} 
+                                </td>
+                            </tr>
+                            </table>
+                    </div>
+
+            </div>
         </div>
 
     </div>

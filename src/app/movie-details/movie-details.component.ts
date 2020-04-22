@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SingleMovieService } from '../single-movie.service';
+import { observable, combineLatest } from 'rxjs';
+//import{rxjs/add/observable/combineLatest}
 
 @Component({
   selector: 'app-movie-details',
@@ -12,7 +14,11 @@ id:number;
 media_type:any;
 movie=[];
   constructor(public route:ActivatedRoute, public _SingleMovieService:SingleMovieService) {  
-
+  this.ngOnInit()
+    this._SingleMovieService.getSingleMediaType(this.media_type, this.id).subscribe(data=>{
+      this.movie=data;
+  
+    });
   }
 
   ngOnInit() {
@@ -21,10 +27,7 @@ movie=[];
       this.media_type=params.get('media_type');
     });
 
-    this._SingleMovieService.getSingleMediaType(this.media_type, this.id).subscribe(data=>{
-      this.movie.push(data);
-  
-    });
+    
   }
 
 }
