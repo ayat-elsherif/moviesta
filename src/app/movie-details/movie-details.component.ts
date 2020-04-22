@@ -13,6 +13,7 @@ export class MovieDetailsComponent implements OnInit {
 id:number;
 media_type:any;
 movie=[];
+tagline:any;spoken_languages:any;languages:any;poster_path:any;title:any;name:any;original_name:any;first_air_date:any;
   constructor(public route:ActivatedRoute, public _SingleMovieService:SingleMovieService) {  
   this.ngOnInit()
     this._SingleMovieService.getSingleMediaType(this.media_type, this.id).subscribe(data=>{
