@@ -1,3 +1,15 @@
 .navbar-brand{
-    font-size: 2rem;
+    //font-size: 2.5rem;
+    line-height: .8rem;
+    //font-weight: bold;
+    font:bold 2.5rem "segoe ui";
+    margin-right: 3rem;
+}
+
+ul{
+    margin-top: 8px !important;
+    li{
+        font-size: 1.5rem;
+    }
+
 }

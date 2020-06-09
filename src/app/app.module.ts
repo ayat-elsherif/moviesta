@@ -13,6 +13,7 @@ import { SeriesComponent } from './series/series.component';
 import { SeePipe } from './see.pipe';
 import { SearchPipe } from './search.pipe';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { InputCheckDirective } from './input-check.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     SeriesComponent,
     SeePipe,
     SearchPipe,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    InputCheckDirective
       ],
   imports: [
     BrowserModule,

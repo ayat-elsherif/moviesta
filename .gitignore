@@ -44,3 +44,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+# assets
+src/assets/movie-bundle2.jpg
+src/assets/movie-bundle-old3.jpg

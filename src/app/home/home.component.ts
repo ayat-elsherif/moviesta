@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import{MovieService} from '../movie.service';
+import Parallax from 'parallax-js';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +14,11 @@ export class HomeComponent implements OnInit {
   pNumber=1;
   pNumbers:number[]=[];
   hiddenImg:String="";
+ 
+
   constructor(public _MovieService:MovieService) {
+    
+
     for(let i=1;i<=10;i++){
           this.pNumbers.push(i);
     }

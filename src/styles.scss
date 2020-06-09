@@ -2,12 +2,27 @@
 body{
     font-family: "segoe ui light";
     background-color: #f5f5f5;
+    background-image: url('assets/polygon-pattern.png');
+}
+.full-height{
+
+    min-height: 100vh;
+    position: relative;
+}
+.row{
+    a[ng-reflect-router-link]{
+        color:#555 !important;
+        h5{
+            font-weight: bold;
+        }
+    }
 }
 .mainSection{
     margin:4rem auto 1rem;
     padding:0 10rem;
-
-    .mainTitle{
+    padding-bottom:1.5rem;
+    height:auto !important;
+  .mainTitle{
         h2{
             border-top: 1px solid #777;
             padding-top: 1rem;
@@ -42,4 +57,9 @@ body{
     }
 }
 
+
+input.form-control:focus,select:focus,textarea:focus{
+    outline: none !important;
+    box-shadow: none;
+}
 
