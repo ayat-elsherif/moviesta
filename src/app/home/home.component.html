@@ -2,29 +2,36 @@
     <!-- <img src='../../assets/movie-bundle.jpg' class='img-fluid'> -->
    <figcaption>
     <h1>Moviesta</h1>
-    <p>All you need to know about your favorite Movies</p>
+    <p>All you need to know about</p>
+    <p class="text-info">Your Favorite Movies</p>
    </figcaption>
 </div>
 <div class="container-fluid mainSection">
     
     <div class="row">
-        <div class="col-md-4 col-xl-4  mainTitle">
+        <div class="col-md-4 col-xl-6 mainTitle">
             <div class="form-group w-100">
-                <input class="form-control mb-3 mt-3" [(ngModel)]='term' placeholder="Search.." />
+                <input class="form-control" [(ngModel)]='term' placeholder="Search.." />
             </div>
-            <h2> All Trends <br>all times</h2>
+            <figcaption>
+                <h2> All Trends.. All Times</h2>
             <p>anything goes here anything goes hereanything goes here anything goes here 
                 here anything goes here anything goes here here anything goes here</p>
+            </figcaption>
         </div>
-        <a class=" col-md-4 col-xl-2" [routerLink]='["/view",trend.media_type,trend.id]' *ngFor="let trend of trends|search:term"> 
+        <a class=" col-md-4 col-xl-3 mb-4" [routerLink]='["/view",trend.media_type,trend.id]' *ngFor="let trend of trends|search:term"> 
             <div class="singleItem col-sm-12" >
                 <img class='img-fluid' 
                 src='https://image.tmdb.org/t/p/w500/{{trend.poster_path? trend.poster_path:trend.backdrop_path}}'/>
-            <h5> 
-                {{trend.name? trend.name:trend.title}}
-            </h5>
-            <span>popularity: {{trend.popularity}}</span>
-            <p>{{trend.overview | see:20}}</p>
+                <div class="itemCapCont">
+                    <div class="itemCap">
+                        <h5> 
+                            {{trend.name? trend.name:trend.title}}
+                        </h5>
+                        <h6>popularity: {{trend.popularity}}</h6>
+                    </div>
+                </div>
+
             <div class="item-label">{{trend.vote_average}}</div>
             </div>
         </a>
